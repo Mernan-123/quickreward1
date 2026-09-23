@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Registration Submitted</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="form-wrap">
+    <div class="card success">
+      <div class="success-icon">✓</div>
+      <h1>Registration submitted</h1>
+      <p>Your application has been received.</p>
+      <p class="reference">Reference: <strong id="reference">—</strong></p>
+      <a href="index.html" class="btn">Back to Home</a>
+    </div>
+  </main>
+  <script>
+    const p = new URLSearchParams(location.search);
+    document.getElementById("reference").textContent = p.get("ref") || "Not available";
+  </script>
+</body>
+</html>

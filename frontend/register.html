@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Register - Loan & Reward</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">Loan<span>&Reward</span></a>
+  </header>
+
+  <main class="form-wrap">
+    <div class="card form-card">
+      <p class="eyebrow">REGISTRATION</p>
+      <h1>Create your application</h1>
+      <p class="muted">Provide accurate information. Do not enter your banking PIN, OTP, or other sensitive authentication codes.</p>
+
+      <form id="registerForm">
+        <div class="grid">
+          <label>Full name<input name="full_name" required maxlength="100" autocomplete="name"></label>
+          <label>Mobile number<input name="mobile_number" required maxlength="20" inputmode="tel" autocomplete="tel"></label>
+          <label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+          <label>Address<input name="address" required maxlength="255" autocomplete="street-address"></label>
+          <label>Desired loan amount (PHP)<input name="loan_amount" type="number" min="0" step="0.01" required></label>
+          <label>Reward preference
+            <select name="reward" required>
+              <option value="">Select one</option>
+              <option>Cash reward</option>
+              <option>Shopping voucher</option>
+              <option>Fee discount</option>
+            </select>
+          </label>
+          <label>Password<input name="password" type="password" required minlength="8" autocomplete="new-password"></label>
+          <label>Confirm password<input name="confirm_password" type="password" required minlength="8" autocomplete="new-password"></label>
+        </div>
+
+        <label class="check"><input type="checkbox" name="consent" required> I agree to the application's terms and privacy notice.</label>
+        <button class="btn" type="submit" id="submitBtn">Submit Registration</button>
+        <p id="message" class="message"></p>
+      </form>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
