@@ -3,19 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Registration Submitted</title>
+  <meta name="description" content="Your Harborline Finance application inquiry has been received.">
+  <title>Inquiry received | Harborline Finance</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <main class="form-wrap">
-    <div class="card success">
+<body class="success-page">
+  <header class="nav success-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Harborline Finance home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span class="brand-copy">
+          <span class="brand-name"><span class="brand-harborline">Harborline</span> <span class="brand-finance">Finance</span></span>
+          <span class="brand-tagline">Loan &amp; Reward</span>
+        </span>
+      </a>
+    </div>
+  </header>
+  <main class="success-shell container">
+    <div class="success-card">
       <div class="success-icon">✓</div>
-      <h1>Registration submitted</h1>
-      <p>Your application has been received.</p>
-      <p class="reference">Reference: <strong id="reference">—</strong></p>
-      <a href="index.html" class="btn">Back to Home</a>
+      <p class="eyebrow">APPLICATION RECEIVED</p>
+      <h1>Inquiry submitted</h1>
+      <p class="success-copy">Thank you. Your application inquiry has been received. Keep this reference number when following up. This confirmation is not a loan approval or offer.</p>
+
+      <div class="reference-box">
+        <span>Reference number</span>
+        <strong id="reference">—</strong>
+      </div>
+
+      <div class="success-actions">
+        <a href="index.html" class="btn">Back to home</a>
+      </div>
     </div>
   </main>
+
   <script>
     const p = new URLSearchParams(location.search);
     document.getElementById("reference").textContent = p.get("ref") || "Not available";
