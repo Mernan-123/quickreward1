@@ -3,47 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Loan & Reward</title>
+  <meta name="description" content="Start a loan application inquiry with Harborline Finance.">
+  <title>Harborline Finance | Personal loan inquiries</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="nav">
-    <div class="brand">Loan<span>&Reward</span></div>
-    <a href="register.html" class="btn small">Register</a>
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Harborline Finance home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span class="brand-copy">
+          <span class="brand-name"><span class="brand-harborline">Harborline</span> <span class="brand-finance">Finance</span></span>
+          <span class="brand-tagline">Loan &amp; Reward</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#benefits">Benefits</a>
+        <a href="#how">How it works</a>
+        <a href="#eligibility">Eligibility</a>
+      </nav>
+      <a href="register.html" class="btn small">Apply now</a>
+    </div>
   </header>
 
-  <main class="hero">
-    <section>
-      <p class="eyebrow">LOAN APPLICATION & REWARD PROGRAM</p>
-      <h1>Apply for a loan and check your reward eligibility.</h1>
-      <p class="sub">Register your information to begin an application. Review the terms and reward conditions before submitting.</p>
+  <main class="hero container">
+    <section class="hero-copy">
+      <p class="eyebrow">A CLEARER WAY TO APPLY</p>
+      <h1>A straightforward first step toward your financial plans.</h1>
+      <p class="sub">Share your contact details and requested reward amount. You’ll receive a reference number when your application inquiry is submitted.</p>
       <div class="actions">
-        <a href="register.html" class="btn">Register Now</a>
-        <a href="#how" class="btn secondary">How it works</a>
+        <a href="register.html" class="btn">Start an application</a>
+        <a href="#how" class="btn secondary">See how it works</a>
+      </div>
+
+      <div class="trust-row">
+        <span>Password confirmation stays private</span>
+        <span>Reference number provided</span>
+        <span>Every request is reviewed</span>
+      </div>
+
+      <div class="stats-row">
+        <div>
+          <strong>01</strong>
+          <span>Share your details</span>
+        </div>
+        <div>
+          <strong>02</strong>
+          <span>Team reviews inquiry</span>
+        </div>
+        <div>
+          <strong>03</strong>
+          <span>Discuss next steps</span>
+        </div>
       </div>
     </section>
 
-    <aside class="card reward">
-      <div class="icon">₱</div>
-      <h2>Reward Program</h2>
-      <p>Complete the registration process and view your application status after submission.</p>
-      <ul>
-        <li>Simple online registration</li>
-        <li>Application status tracking</li>
-        <li>Clear terms and consent</li>
+    <aside class="loan-panel" aria-label="Application information">
+      <div class="panel-header">
+        <div class="mini-badge">₱</div>
+        <div>
+          <p class="panel-label">Your application</p>
+          <h2>What to expect</h2>
+        </div>
+      </div>
+
+      <div class="amount-box">
+        <span>Your next step</span>
+        <strong>Start an inquiry</strong>
+        <small>Share your contact details and the reward amount you would like reviewed.</small>
+      </div>
+
+      <ul class="feature-list">
+        <li>Submit your contact details and requested reward amount</li>
+        <li>Keep the reference number for follow-up</li>
+        <li>Review any proposed terms before deciding</li>
       </ul>
+
+      <div class="panel-footer">
+        <div>
+          <span>Submission</span>
+          <strong>Online inquiry</strong>
+        </div>
+        <div>
+          <span>Outcome</span>
+          <strong>Subject to review</strong>
+        </div>
+      </div>
     </aside>
   </main>
 
-  <section id="how" class="how">
-    <h2>How it works</h2>
-    <div class="steps">
-      <div class="card"><b>01</b><h3>Register</h3><p>Enter the information requested in the application form.</p></div>
-      <div class="card"><b>02</b><h3>Submit</h3><p>Review your details and submit your application.</p></div>
-      <div class="card"><b>03</b><h3>Track</h3><p>Keep your reference number for future status checks.</p></div>
+  <section id="benefits" class="section container">
+    <div class="section-heading">
+      <p class="eyebrow">A CONSIDERED APPLICATION PROCESS</p>
+      <h2>Practical details. Clear expectations.</h2>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="feature-icon">✓</div>
+        <h3>One clear application</h3>
+        <p>Share your name, mobile number, and requested reward amount.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Clear expectations</h3>
+        <p>Your requested reward amount is reviewed and is not guaranteed.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Privacy-minded form</h3>
+        <p>Your password confirmation is checked in your browser and is never sent with the inquiry.</p>
+      </article>
     </div>
   </section>
 
-  <footer>© 2026 Loan & Reward • Please review the privacy notice and terms before submitting.</footer>
+  <section id="how" class="section container">
+    <div class="section-heading">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h2>Know what happens after you submit.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step-card">
+        <b>01</b>
+        <h3>Register</h3>
+        <p>Enter your contact details and requested reward amount.</p>
+      </div>
+      <div class="step-card">
+        <b>02</b>
+        <h3>Submit</h3>
+        <p>Confirm your information and consent to follow-up about this inquiry.</p>
+      </div>
+      <div class="step-card">
+        <b>03</b>
+        <h3>Track</h3>
+        <p>Keep your reference number so you can refer to your inquiry when contacted.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="eligibility" class="cta-band container">
+    <div>
+      <p class="eyebrow">READY TO GET STARTED?</p>
+      <h2>Start with an application inquiry.</h2>
+    </div>
+    <a href="register.html" class="btn">Start application</a>
+  </section>
+
+  <footer>© 2026 Harborline Finance • Submitting an inquiry does not guarantee loan approval or a loan offer.</footer>
 </body>
 </html>
