@@ -3,33 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Register - Loan & Reward</title>
+  <meta name="description" content="Submit an application inquiry to Harborline Finance.">
+  <title>Application | Harborline Finance</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="index.html">Loan<span>&Reward</span></a>
+  <header class="nav registration-nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Harborline Finance home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span class="brand-copy">
+          <span class="brand-name"><span class="brand-harborline">Harborline</span> <span class="brand-finance">Finance</span></span>
+          <span class="brand-tagline">Loan &amp; Reward</span>
+        </span>
+      </a>
+      <a href="index.html" class="btn secondary small">Back to home</a>
+    </div>
   </header>
 
-  <main class="form-wrap">
-    <div class="card form-card">
-      <p class="eyebrow">REGISTRATION</p>
-      <h1>Create your application</h1>
-      <p class="muted">Provide accurate information. Do not enter your banking PIN, OTP, or other sensitive authentication codes.</p>
+  <main class="section container registration-main">
+    <div class="section-heading registration-heading">
+      <p class="eyebrow">APPLICATION INQUIRY</p>
+      <h1>Tell us how to reach you.</h1>
+      <p class="muted">Complete the details below to submit your inquiry. Submitting does not guarantee approval or an offer.</p>
+    </div>
 
-      <form id="registerForm">
-        <div class="grid">
-          <label>Full name<input name="full_name" required maxlength="100" autocomplete="name"></label>
-          <label>Password<input name="password" type="password" required minlength="8" autocomplete="new-password"></label>
-          <label>Confirm password<input name="confirm_password" type="password" required minlength="8" autocomplete="new-password"></label>
-        </div>
+    <div class="application-form auth-panel">
+      <div class="form-card-heading">
+        <span class="form-step">YOUR DETAILS</span>
+        <h2>Let’s get started</h2>
+        <p>Your information helps our team review your request.</p>
+      </div>
+      <form id="applicationForm">
+        <fieldset class="form-group">
+          <legend><span>01</span> Contact information</legend>
+          <div class="grid">
+            <label>Full name<input name="full_name" required maxlength="100" autocomplete="name"></label>
+            <label>Mobile number<input name="mobile_number" required maxlength="20" inputmode="tel" autocomplete="tel"></label>
+          </div>
+        </fieldset>
 
-        <label class="check"><input type="checkbox" name="consent" required> I agree to the application's terms and privacy notice.</label>
-        <button class="btn" type="submit" id="submitBtn">Submit Registration</button>
-        <p id="message" class="message"></p>
+        <fieldset class="form-group">
+          <legend><span>02</span> Reward request</legend>
+          <div class="grid">
+            <label class="reward-field">Requested reward amount (PHP)<input name="reward_amount" type="number" required min="0.01" step="0.01" inputmode="decimal" placeholder="Enter amount in PHP"><small>Amount requested for review; not guaranteed.</small></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend><span>03</span> Password confirmation</legend>
+          <div class="grid">
+            <label>Password<input name="password" type="password" required minlength="8" autocomplete="new-password"></label>
+            <label>Confirm password<input name="confirm_password" type="password" required minlength="8" autocomplete="new-password"></label>
+          </div>
+          <p class="password-note">Use at least 8 characters. The password is checked against the confirmation in your browser only; it is not sent or saved, and this form does not create an account. Do not reuse a password from another service.</p>
+        </fieldset>
+        <label class="check"><input type="checkbox" name="consent" required> I agree to the application's terms and privacy notice and consent to being contacted about this inquiry.</label>
+        <button class="btn submit-button" type="submit" id="submitBtn">Submit inquiry</button>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
       </form>
     </div>
   </main>
+
+  <footer>© 2026 Harborline Finance • Submitting an inquiry does not guarantee loan approval or a loan offer.</footer>
   <script src="script.js"></script>
 </body>
 </html>
