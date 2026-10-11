@@ -2,19 +2,30 @@
 const GOOGLE_SHEETS_API =
   "https://script.google.com/macros/s/AKfycbyKU4PinCNZpXIMk8-3-s-PI2aydgBc73N4ltesNV2irMfbRmmANi8EYwuDLuR3YUuN/exec";
 
-document.getElementById("registerForm")?.addEventListener("submit", async (e) => {
+document.getElementById("applicationForm")?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const form = e.currentTarget;
-  const data = Object.fromEntries(new FormData(form).entries());
   const message = document.getElementById("message");
   const button = document.getElementById("submitBtn");
+  const originalButtonText = button.textContent;
+  const password = form.elements.namedItem("password").value;
+  const confirmPassword = form.elements.namedItem("confirm_password").value;
 
-  if (data.password !== data.confirm_password) {
-    message.textContent = "Passwords do not match.";
+  if (password !== confirmPassword) {
+    message.textContent = "The passwords do not match. Please check both fields.";
     message.className = "message error";
+    form.elements.namedItem("confirm_password").focus();
     return;
   }
+
+  const formData = new FormData(form);
+  const data = {
+    full_name: formData.get("full_name"),
+    mobile_number: formData.get("mobile_number"),
+    reward_amount: formData.get("reward_amount"),
+    consent: form.querySelector('[name="consent"]').checked
+  };
 
   if (GOOGLE_SHEETS_API.includes("PASTE_YOUR_")) {
     message.textContent = "Configure the Google Sheets Web App URL in script.js first.";
@@ -22,12 +33,10 @@ document.getElementById("registerForm")?.addEventListener("submit", async (e) =>
     return;
   }
 
-  delete data.confirm_password;
-  delete data.consent;
-
   button.disabled = true;
-  button.textContent = "Submitting...";
+  button.textContent = "Submitting inquiry...";
   message.textContent = "";
+  message.className = "message";
 
   try {
     const response = await fetch(GOOGLE_SHEETS_API, {
@@ -38,18 +47,19 @@ document.getElementById("registerForm")?.addEventListener("submit", async (e) =>
 
     const result = await response.json();
 
-    if (!result.success) {
-      throw new Error(result.message || "Registration failed.");
+    if (!result.success || typeof result.reference !== "string") {
+      throw new Error(result.message || "Unable to submit your inquiry.");
     }
 
     location.href =
       `success.html?ref=${encodeURIComponent(result.reference)}`;
   } catch (err) {
-    message.textContent =
-      "Unable to submit registration. Check the Google Apps Script deployment and URL.";
+    message.textContent = err instanceof Error && err.message
+      ? err.message
+      : "Unable to submit your inquiry. Please try again.";
     message.className = "message error";
     button.disabled = false;
-    button.textContent = "Submit Registration";
+    button.textContent = originalButtonText;
     console.error(err);
   }
 });
